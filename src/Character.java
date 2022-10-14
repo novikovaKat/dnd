@@ -8,6 +8,14 @@ public class Character {
         this.dndClass = dndClass;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDndClass(String dndClass) {
+        this.dndClass = dndClass;
+    }
+
     public void setAttributes(Stats attributes) {
         this.attributes = attributes;
     }

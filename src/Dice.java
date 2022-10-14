@@ -17,7 +17,6 @@ public class Dice {
         }
 
         Arrays.sort(values);
-        // System.out.println(Arrays.toString(values));
 
         int sum = 0;
         for (int i = THROWING - SELECTION; i < THROWING; i++) {

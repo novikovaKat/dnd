@@ -5,22 +5,6 @@ public class Originator {
     public Originator() {
         stats = new Stats();
     }
-
-    public String getState() {
-        return state;
-    }
-
-    public Stats getStats() throws CloneNotSupportedException {
-        return (Stats) stats.clone();
-    }
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    public void setStats(Stats stats) throws CloneNotSupportedException {
-        this.stats = (Stats) stats.clone();
-    }
-
     public void generateNew(String state){
         this.state = state;
         stats.generate();
@@ -45,6 +29,21 @@ public class Originator {
         stats.print();
     }
 
+    public String getState() {
+        return state;
+    }
+
+    public Stats getStats() throws CloneNotSupportedException {
+        return (Stats) stats.clone();
+    }
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public void setStats(Stats stats) throws CloneNotSupportedException {
+        this.stats = (Stats) stats.clone();
+    }
+
     private class Memento{
         private String state;
         private Stats stats;
@@ -55,7 +54,4 @@ public class Originator {
         }
 
     }
-
-
-
 }
