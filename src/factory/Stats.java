@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.Set;
 
 public class Stats {
-    private static final int STATS_AMOUNT = 6;
     private HashMap<String, Integer> attributes;
 
     public Stats(){
