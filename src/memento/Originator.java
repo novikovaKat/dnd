@@ -1,3 +1,5 @@
+package memento;
+
 public class Originator {
     private String state;
     private Stats stats;

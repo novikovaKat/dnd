@@ -1,3 +1,5 @@
+package memento;
+
 public class Stats implements Cloneable{
     private int strength;
     private int dexterity;

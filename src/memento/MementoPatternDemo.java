@@ -1,3 +1,5 @@
+package memento;
+
 public class MementoPatternDemo {
     public static void main(String[] args) throws CloneNotSupportedException {
 
