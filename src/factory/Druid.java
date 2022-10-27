@@ -18,7 +18,7 @@ public class Druid extends CharacterClass {
     protected void printMagica() {
         System.out.println("Class " + name + " knows spells:");
         for (String spell: spells) {
-            System.out.println(spell);
+            System.out.println("+ " + spell);
         }
     }
 }

@@ -25,6 +25,7 @@ public class Character {
     public void printSheet(){
         System.out.println("Name: " + name);
         System.out.println("DnD class: " + dndClass.getName());
+        dndClass.printMagica();
         System.out.println("Health: " + health);
         stats.print();
     }
