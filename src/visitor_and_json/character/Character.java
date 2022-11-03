@@ -7,6 +7,7 @@ import visitor_and_json.dndclass.CharacterClass;
 import visitor_and_json.race.CharacterRace;
 
 import java.util.Set;
+import java.util.TreeMap;
 
 public class Character implements DataElement {
     private String name;
@@ -19,7 +20,7 @@ public class Character implements DataElement {
         this.name = name;
         this.dndClass = dndClass;
         this.race = race;
-        this.health = dndClass.getDice();
+        this.health = dndClass.getInitialHP();
         this.stats = new Stats();
     }
     public void generateStats(){
@@ -53,7 +54,7 @@ public class Character implements DataElement {
     }
 
     @Override
-    public void access(DataElementsVisitor visitor) {
-        visitor.visit(this);
+    public TreeMap access(DataElementsVisitor visitor) {
+        return visitor.visit(this);
     }
 }

@@ -5,9 +5,11 @@ import visitor_and_json.dndclass.CharacterClass;
 import visitor_and_json.character.Character;
 import visitor_and_json.character.Stats;
 
+import java.util.TreeMap;
+
 public interface DataElementsVisitor {
-    void visit(Character character);
-    void visit(CharacterRace characterRace);
-    void visit(CharacterClass characterClass);
-    void visit(Stats stats);
+    TreeMap visit(Character character);
+    TreeMap visit(CharacterRace characterRace);
+    TreeMap visit(CharacterClass characterClass);
+    TreeMap visit(Stats stats);
 }

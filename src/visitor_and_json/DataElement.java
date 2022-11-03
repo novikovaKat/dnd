@@ -1,5 +1,7 @@
 package visitor_and_json;
 
+import java.util.TreeMap;
+
 public interface DataElement {
-    public void access(DataElementsVisitor visitor);
+    public TreeMap access(DataElementsVisitor visitor);
 }

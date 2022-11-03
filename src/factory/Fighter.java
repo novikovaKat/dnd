@@ -1,4 +1,4 @@
-package visitor_and_json.dndclass;
+package factory;
 
 public class Fighter extends CharacterClass {
     private String perk;
@@ -10,7 +10,7 @@ public class Fighter extends CharacterClass {
     }
 
     @Override
-    public void printMagica() {
-        System.out.println("Perk: "+ perk);
+    protected void printMagica() {
+        System.out.println("Class " + name + " can perk " + perk);
     }
 }

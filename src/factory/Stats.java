@@ -1,9 +1,6 @@
 package factory;
 
-import factory.Dice;
-
 import java.util.HashMap;
-import java.util.Map;
 import java.util.Set;
 
 public class Stats {

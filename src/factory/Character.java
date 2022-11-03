@@ -1,7 +1,5 @@
 package factory;
 
-import factory.Stats;
-
 public class Character {
     private String name;
     private CharacterClass dndClass;

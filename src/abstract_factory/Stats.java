@@ -1,15 +1,9 @@
-package visitor_and_json.character;
-
-
-import abstract_factory.Dice;
-import visitor_and_json.DataElement;
-import visitor_and_json.DataElementsVisitor;
+package abstract_factory;
 
 import java.util.HashMap;
 import java.util.Set;
-import java.util.TreeMap;
 
-public class Stats implements DataElement {
+public class Stats {
     private HashMap<String, Integer> attributes;
 
     public Stats(){
@@ -50,10 +44,5 @@ public class Stats implements DataElement {
         }
 
         System.out.println("----------------------");
-    }
-
-    @Override
-    public TreeMap access(DataElementsVisitor visitor) {
-       return visitor.visit(this);
     }
 }

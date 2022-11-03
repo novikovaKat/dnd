@@ -6,25 +6,35 @@ import visitor_and_json.character.Stats;
 import visitor_and_json.dndclass.CharacterClass;
 import visitor_and_json.race.CharacterRace;
 
+import java.util.TreeMap;
+
 public class DataPrintVisitor implements DataElementsVisitor{
     @Override
-    public void visit(Character character) {
-        System.out.println("Name: " + character.getName());
+    public TreeMap visit(Character character) {
+        TreeMap tree = new TreeMap<>();
+        tree.put("Name", character.getName());
+        tree.put("HP", character.getHealth());
+        return tree;
     }
 
     @Override
-    public void visit(CharacterRace characterRace) {
-        characterRace.print();
+    public TreeMap visit(CharacterRace characterRace) {
+        TreeMap tree = new TreeMap<>();
+        tree.put("Race", characterRace.getName());
+        return tree;
     }
 
     @Override
-    public void visit(CharacterClass characterClass) {
-        System.out.println(characterClass.toString());
-        characterClass.printMagica();
+    public TreeMap visit(CharacterClass characterClass) {
+       TreeMap tree = new TreeMap<>();
+       tree.put("Class", characterClass.getName());
+       return tree;
     }
 
     @Override
-    public void visit(Stats stats) {
-        stats.print();
+    public TreeMap visit(Stats stats) {
+        TreeMap tree = new TreeMap<>();
+        tree.put("Attributes", stats.getAttributes());
+        return tree;
     }
 }

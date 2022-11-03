@@ -1,4 +1,4 @@
-package abstract_factory;
+package memento.abstract_factory;
 
 public class Human extends CharacterRace{
     public Human(String name, Stats bonuses) {

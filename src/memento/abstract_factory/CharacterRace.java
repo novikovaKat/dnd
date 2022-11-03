@@ -1,13 +1,8 @@
-package visitor_and_json.race;
-
-import visitor_and_json.character.Stats;
-import visitor_and_json.DataElement;
-import visitor_and_json.DataElementsVisitor;
+package memento.abstract_factory;
 
 import java.util.Set;
-import java.util.TreeMap;
 
-public abstract class CharacterRace implements DataElement {
+public abstract class CharacterRace {
     protected String name;
     protected Stats bonuses;
 
@@ -24,14 +19,16 @@ public abstract class CharacterRace implements DataElement {
         return name;
     }
 
-    public void printBonuses(){
+    public void print(){
         Set<String> keys = this.bonuses.getAttributes().keySet();
 
+        System.out.println("Race: " + name);
         System.out.println("-------Bonuses-------");
 
         for (String title: keys) {
             if(bonuses.getAttributes().get(title)!=0){
                 System.out.println(title + ": " + bonuses.getAttributes().get(title));
+
             }
         }
 
@@ -40,10 +37,5 @@ public abstract class CharacterRace implements DataElement {
 
     public void saySMTH() {
 
-    }
-
-    @Override
-    public TreeMap access(DataElementsVisitor visitor) {
-        return visitor.visit(this);
     }
 }

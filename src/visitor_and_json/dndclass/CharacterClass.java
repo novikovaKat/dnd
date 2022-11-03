@@ -3,13 +3,15 @@ package visitor_and_json.dndclass;
 import visitor_and_json.DataElement;
 import visitor_and_json.DataElementsVisitor;
 
+import java.util.TreeMap;
+
 public abstract class CharacterClass implements DataElement {
     protected String name;
     protected int initialHP;
 
     public abstract void printMagica();
 
-    public int getDice() {
+    public int getInitialHP() {
         return initialHP;
     }
 
@@ -17,13 +19,14 @@ public abstract class CharacterClass implements DataElement {
         return name;
     }
 
+
     @Override
     public String toString() {
         return "Class: " + name + " uses " + initialHP + "D dice to roll up hp";
     }
 
     @Override
-    public void access(DataElementsVisitor visitor) {
-        visitor.visit(this);
+    public TreeMap access(DataElementsVisitor visitor) {
+        return visitor.visit(this);
     }
 }

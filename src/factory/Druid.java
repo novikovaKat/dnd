@@ -1,4 +1,4 @@
-package visitor_and_json.dndclass;
+package factory;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,10 +15,10 @@ public class Druid extends CharacterClass {
     }
 
     @Override
-    public void printMagica() {
-        System.out.println("------Spells-----");
+    protected void printMagica() {
+        System.out.println("Class " + name + " knows spells:");
         for (String spell: spells) {
-            System.out.println(spell);
+            System.out.println("+ " + spell);
         }
     }
 }
