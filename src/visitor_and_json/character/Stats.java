@@ -42,14 +42,12 @@ public class Stats implements DataElement {
     }
 
     public void print(){
-        System.out.println("------Attributes------");
+        System.out.println("Attributes:");
 
         Set<String> keys = this.attributes.keySet();
         for (String title: keys) {
             System.out.println(title + ": " + attributes.get(title));
         }
-
-        System.out.println("----------------------");
     }
 
     @Override

@@ -14,13 +14,14 @@ import java.util.List;
 
 public class Demo {
     public static void main(String[] args) throws IOException {
-        DataElementsVisitor elementVisitor = new DataPrintVisitor();
+        DataElementsVisitor elementVisitor = new ElementVisitor();
         JSONObject jsonObject = new JSONObject();
-        FileWriter file = new FileWriter("output.json");
+        FileWriter file = new FileWriter("../dnd/src/visitor_and_json/output.json");
 
         Character player1 = new Character("Earnan Magees", new Fighter(), new Dragonborn());
         player1.generateStats();
         player1.addBonuses();
+
 
         List<DataElement> list = new ArrayList<>();
         list.add(player1);
@@ -33,6 +34,7 @@ public class Demo {
         }
         file.write("[");
         file.write(jsonObject.toJSONString());
+        list.clear();
 
         Character player2 = new Character("Marceline Duffs", new Druid(), new Human());
         player2.generateStats();
