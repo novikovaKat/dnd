@@ -1,8 +1,12 @@
-package abstract_factory;
+package visitor_and_json.race;
+
+import visitor_and_json.character.Stats;
+import visitor_and_json.DataElement;
+import visitor_and_json.DataElementsVisitor;
 
 import java.util.Set;
 
-public abstract class CharacterRace {
+public abstract class CharacterRace implements DataElement {
     protected String name;
     protected Stats bonuses;
 
@@ -28,7 +32,6 @@ public abstract class CharacterRace {
         for (String title: keys) {
             if(bonuses.getAttributes().get(title)!=0){
                 System.out.println(title + ": " + bonuses.getAttributes().get(title));
-
             }
         }
 
@@ -37,5 +40,10 @@ public abstract class CharacterRace {
 
     public void saySMTH() {
 
+    }
+
+    @Override
+    public void access(DataElementsVisitor visitor) {
+        visitor.visit(this);
     }
 }

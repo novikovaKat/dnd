@@ -1,9 +1,13 @@
-package abstract_factory;
+package visitor_and_json.character;
+
+
+import visitor_and_json.DataElement;
+import visitor_and_json.DataElementsVisitor;
 
 import java.util.HashMap;
 import java.util.Set;
 
-public class Stats {
+public class Stats implements DataElement {
     private HashMap<String, Integer> attributes;
 
     public Stats(){
@@ -44,5 +48,10 @@ public class Stats {
         }
 
         System.out.println("----------------------");
+    }
+
+    @Override
+    public void access(DataElementsVisitor visitor) {
+        visitor.visit(this);
     }
 }
